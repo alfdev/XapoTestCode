@@ -12,12 +12,16 @@ query {
     nodes {
       ... on Repository {
           id
-          nameWithOwner
           name
           description
           url
           updatedAt
           forkCount
+
+        	owner {
+            login
+            avatarUrl
+          }
 
           stargazers {
             totalCount

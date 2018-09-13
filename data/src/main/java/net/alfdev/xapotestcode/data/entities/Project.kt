@@ -5,17 +5,16 @@ import java.util.*
 
 data class Project (
         val id: String,
-        val nameWithOwner: String,
         val name: String,
         val url: String,
         val updatedAt: Date,
         val forkCount: Int,
-
-        val stargazers: SubItemsCount,
+        val owner: Owner,
+        val stargazers: SubItemsCount?,
 
         @SerializedName("repositoryTopics")
-        val topics: NestedData<Topic>,
+        val topics: NestedData<Topic>?,
 
         @SerializedName("languages")
-        val languages: NestedData<Language>
+        val languages: NestedData<Language>?
 )
