@@ -7,7 +7,7 @@ import net.alfdev.xapotestcode.data.network.Query
 import net.alfdev.xapotestcode.data.network.ServiceApi
 
 class ProjectRepositoryImpl constructor(private val api: ServiceApi) : ProjectRepository {
-    override fun getProjects(queryString: String, pageSize: Int, nextPageToken: String): Observable<SearchResult> {
+    override fun getProjects(queryString: String, pageSize: Int, nextPageToken: String?): Observable<SearchResult> {
         val query = RepositoryUtility.formatQueryStringForProjects(
                 value = queryString, pageSize = pageSize, nextPageToken = nextPageToken
         )

@@ -6,6 +6,8 @@ import java.util.*
 data class Project (
         val id: String,
         val name: String,
+        val nameWithOwner: String,
+        val description: String,
         val url: String,
         val updatedAt: Date,
         val forkCount: Int,

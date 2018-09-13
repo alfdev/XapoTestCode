@@ -6,6 +6,8 @@ import java.util.Date
 data class ProjectModel (
         val id: String,
         val name: String,
+        val nameWithOwner: String,
+        val description: String,
         val url: String,
         val updatedAt: Date,
         val forkCount: Int,
@@ -19,6 +21,8 @@ fun Project.toModel(): ProjectModel {
     val model = ProjectModel (
             id = this.id,
             name = this.name,
+            nameWithOwner = this.nameWithOwner,
+            description = this.description,
             url = this.url,
             updatedAt = this.updatedAt,
             forkCount = this.forkCount,

@@ -7,6 +7,7 @@ data class ProjectDetail (
         val id: String,
         val nameWithOwner: String,
         val name: String,
+        val description: String,
         val url: String,
         val updatedAt: Date,
         val forkCount: Int,
