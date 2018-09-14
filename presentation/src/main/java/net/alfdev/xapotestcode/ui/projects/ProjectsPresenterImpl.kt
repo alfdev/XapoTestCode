@@ -44,7 +44,7 @@ class ProjectsPresenterImpl @Inject constructor(
                                 if (result.errors != null) {
                                     view.showError(result.errors?.first()?.message!!)
                                 } else {
-                                    view.showProjects(result.data.value.nodes.map { it.toModel() }, forceUpdate)
+                                    view.showProjects(result.dataSearch.search.nodes.map { it.toModel() }, forceUpdate)
                                 }
                             }
                         },

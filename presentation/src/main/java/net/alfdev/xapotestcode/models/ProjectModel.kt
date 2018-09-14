@@ -18,19 +18,17 @@ data class ProjectModel (
 )
 
 fun Project.toModel(): ProjectModel {
-    val model = ProjectModel (
-            id = this.id,
-            name = this.name,
-            nameWithOwner = this.nameWithOwner,
-            description = this.description,
-            url = this.url,
-            updatedAt = this.updatedAt,
-            forkCount = this.forkCount,
-            owner = this.owner.toModel(),
-            languages = this.languages?.nodes?.map { it.toModel() },
-            starsCount = this.stargazers?.totalCount!!,
-            topics = this.topics?.nodes?.map { it.name }
+    return ProjectModel (
+            id = id,
+            name = name,
+            nameWithOwner = nameWithOwner,
+            description = description,
+            url = url,
+            updatedAt = updatedAt,
+            forkCount = forkCount,
+            owner = owner.toModel(),
+            languages = languages?.nodes?.map { it.toModel() },
+            starsCount = stargazers?.totalCount!!,
+            topics = topics?.nodes?.map { it.name.replace("/topics/", "") }
     )
-
-    return model
 }

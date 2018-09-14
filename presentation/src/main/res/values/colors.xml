@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="list_item_divider">#dedede</color>
+    <color name="title_color">#0366d6</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="pure_black">#000000</color>
 </resources>

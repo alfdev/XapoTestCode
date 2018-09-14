@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 apply from: '../dependencies.gradle'
 
@@ -17,13 +18,19 @@ android {
     }
 
     buildTypes {
+        def GITHUB_AUTH_TOKEN = "\"c33bfb79c6deac8e8e4fce7c894400b9fb106e96\""
+
         debug {
+            buildConfigField "String", "GITHUB_AUTH_TOKEN", GITHUB_AUTH_TOKEN
+
             debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
         release {
+            buildConfigField "String", "GITHUB_AUTH_TOKEN", GITHUB_AUTH_TOKEN
+
             debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -60,6 +67,7 @@ dependencies {
     implementation retrofit
     implementation retrofitGsonConverter
     implementation retrofitRxJava2Adapter
+    implementation retrofitHttpLogginInterceptor
 
     // test libs
     testImplementation 'junit:junit:4.12'

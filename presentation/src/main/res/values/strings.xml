@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">XapoTestCode</string>
+    <string name="app_name">Xapo Test-Code</string>
 
     <string name="project_list_query"><![CDATA[
 query {
-  search(type: REPOSITORY, query: "topic:android sort:stars-desc", first:%1$s, after:%2$s) {
+  search(type: REPOSITORY, query: \"topic:android sort:stars-desc\", first:%1$s, after:%2$s) {
     repositoryCount
     pageInfo {
       endCursor
@@ -48,6 +48,66 @@ query {
   }
 }
 ]]></string>
+
+    <string name="project_detail_query"><![CDATA[
+query {
+  repository(owner:\"%1$s\", name:\"%2$s\") {
+    id
+    name
+    nameWithOwner
+    description
+    url
+    updatedAt
+    forkCount
+
+    owner {
+      login
+      avatarUrl
+    }
+
+    issues {
+      totalCount
+    }
+
+    pullRequests {
+      totalCount
+    }
+
+    stargazers {
+      totalCount
+    }
+
+    watchers {
+      totalCount
+    }
+
+    releases {
+      totalCount
+    }
+
+    commitComments {
+      totalCount
+    }
+
+    repositoryTopics(first:5) {
+      totalCount
+      nodes {
+        resourcePath
+      }
+    }
+
+    languages(first:1, orderBy: {field:SIZE, direction:DESC}) {
+      totalCount
+      nodes {
+        name
+        color
+      }
+    }
+  }
+}
+]]></string>
+
     <string name="generic_error_message">Error</string>
-    <string name="updated_on">Updated on 19 Oct 2017</string>
+    <string name="updated_on">Updated on %1$s</string>
+    <string name="project_not_found_error_message">Project not found.</string>
 </resources>
