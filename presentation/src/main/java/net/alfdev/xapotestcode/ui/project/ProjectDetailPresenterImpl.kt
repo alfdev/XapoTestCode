@@ -33,7 +33,6 @@ class ProjectDetailPresenterImpl @Inject constructor(
         view.showLoading()
 
         disposable = repository.getProject(
-                    queryString = view.getContext().getString(R.string.project_detail_query),
                     owner = owner,
                     name = name)
                 .observeOn(AndroidSchedulers.mainThread())
