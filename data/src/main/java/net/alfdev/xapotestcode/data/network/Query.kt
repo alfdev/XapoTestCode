@@ -1,3 +1,5 @@
 package net.alfdev.xapotestcode.data.network
 
-data class Query (val query: String)
+import com.google.gson.annotations.Expose
+
+data class Query (@Expose val query: String)

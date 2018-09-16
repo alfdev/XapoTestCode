@@ -12,12 +12,12 @@ data class ProjectDetail (
         val updatedAt: Date,
         val forkCount: Int,
         val owner: Owner,
-        val issue: SubItemsCount,
-        val pullRequests: SubItemsCount,
-        val stargazers: SubItemsCount,
-        val watchers: SubItemsCount,
-        val releases: SubItemsCount,
-        val commitComments: SubItemsCount,
+        val issue: SubItemsCount?,
+        val pullRequests: SubItemsCount?,
+        val stargazers: SubItemsCount?,
+        val watchers: SubItemsCount?,
+        val releases: SubItemsCount?,
+        val commitComments: SubItemsCount?,
 
         @SerializedName("repositoryTopics")
         val topics: NestedData<Topic>,

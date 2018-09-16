@@ -31,9 +31,7 @@ class ProjectsPresenterImpl @Inject constructor(
             nextPageToken = null
         }
 
-        disposable = repository.getProjects(
-                    view.getContext().getString(R.string.project_list_query),
-                    pageSize = 10,
+        disposable = repository.getProjects(pageSize = 10,
                     nextPageToken = nextPageToken)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -44,7 +42,7 @@ class ProjectsPresenterImpl @Inject constructor(
                                 if (result.errors != null) {
                                     view.showError(result.errors?.first()?.message!!)
                                 } else {
-                                    view.showProjects(result.data.value.nodes.map { it.toModel() }, forceUpdate)
+                                    view.showProjects(result.dataSearch.search.nodes.map { it.toModel() }, forceUpdate)
                                 }
                             }
                         },
