@@ -31,9 +31,7 @@ class ProjectsPresenterImpl @Inject constructor(
             nextPageToken = null
         }
 
-        disposable = repository.getProjects(
-                    view.getContext().getString(R.string.project_list_query),
-                    pageSize = 10,
+        disposable = repository.getProjects(pageSize = 10,
                     nextPageToken = nextPageToken)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
