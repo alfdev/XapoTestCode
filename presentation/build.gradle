@@ -70,7 +70,8 @@ dependencies {
     implementation retrofitHttpLogginInterceptor
 
     // test libs
-    testImplementation 'junit:junit:4.12'
+    testImplementation junit
+    testImplementation mockito
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 

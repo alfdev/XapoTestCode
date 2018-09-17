@@ -30,4 +30,3 @@ I have chosen MVP in order to develop this task due to:
 - UI enhancements
 - Write more unit tests
 - Write Instrumentation tests
-
