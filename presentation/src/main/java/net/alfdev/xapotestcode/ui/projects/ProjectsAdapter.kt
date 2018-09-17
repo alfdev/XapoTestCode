@@ -3,6 +3,7 @@ package net.alfdev.xapotestcode.ui.projects
 import android.content.Context
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.support.v7.widget.DrawableUtils
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.project_list_item.view.*
 import net.alfdev.xapotestcode.R
 import net.alfdev.xapotestcode.models.ProjectModel
+import net.alfdev.xapotestcode.ui.DrawablesUtility
 import java.text.DateFormat
 import java.util.*
 
@@ -62,8 +64,10 @@ class ProjectsAdapter(private val context: Context, private val listener: OnProj
 
         if (language != null) {
             // get and colorize circle drawable
-            val drawable = context.getDrawable(R.drawable.language_badge)
-            drawable.setColorFilter(Color.parseColor(language.color), PorterDuff.Mode.ADD)
+            val drawable = DrawablesUtility.colorizeDrawable(
+                    context.getDrawable(R.drawable.language_badge)!!,
+                    language.color
+            )
 
             holder.language.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null)
 
